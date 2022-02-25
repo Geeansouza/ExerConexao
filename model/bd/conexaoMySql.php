@@ -1,0 +1,42 @@
+<?php
+/******************************************************** 
+*Objetivo: Arquivo para criar a conexão com o bd MySql
+*auto:Leonardo
+*data: 25/02/2022
+*versão: 1.0
+*********************************************************/
+
+//contantes para estabelecer a conexão com o BD(local do BD, Senha e database)
+const SERVER = 'localhost';
+const USER = 'root';
+const PASSWORD = 'bcd127';
+const DATABASE = 'dbcontatos';
+
+$resultado = conexaoMysql();
+echo('<pre>');
+var_dump($resultado);
+echo('</pre>');
+
+//abre a conexao com o banco de dados mysql
+function conexaoMysql(){
+    $conexao = array();
+
+    //se a conexao for estabelecida com o BD, iremos ter um array de dados sobre a conexao
+    $conexao = mysqli_connect(SERVER, USER, PASSWORD, DATABASE);
+
+    //Validação para verificar se a conexão foi realizada com sucesso
+    if($conexao){
+        return $conexao;
+    }else{
+        return false;
+    }
+}
+
+//Existem 3 formas de criar a conexão com o BD Mysql
+//    mysql_connect() - versão antiga do PHP de fazer conexão com o BD
+//       (não oferece performace e segurança)
+//    mysqli_connect() - versão mais atualizada do PHP de fazer conexão do BD
+//       (Ela permite ser utilizada para programação estruturada e POO)
+//    PDO() - versão mais completa e eficiente para conexão com BD
+//       (é indicada pela segurança e POO)
+?>
