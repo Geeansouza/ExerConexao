@@ -1,7 +1,7 @@
 <?php
 /******************************************************** 
 *Objetivo: Arquivo para criar a conexão com o bd MySql
-*auto:Leonardo
+*autor:Gean
 *data: 25/02/2022
 *versão: 1.0
 *********************************************************/
@@ -11,12 +11,6 @@ const SERVER = 'localhost';
 const USER = 'root';
 const PASSWORD = 'bcd127';
 const DATABASE = 'dbcontatos';
-
-$resultado = conexaoMysql();
-echo('<pre>');
-var_dump($resultado);
-echo('</pre>');
-
 //abre a conexao com o banco de dados mysql
 function conexaoMysql(){
     $conexao = array();
