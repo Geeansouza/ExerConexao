@@ -5,16 +5,35 @@ body, h1, p{
     margin: 0px;
     padding: 0px;
 }
+body{
+    background: hsla(191, 88%, 81%, 1);
+
+    background: linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#A4E9F9", endColorstr="#C5AEF2", GradientType=1 );
+}
 #cadastro{
+    
     width: 800px;
     min-height: 700px;
     height: auto;
+    margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
     box-sizing: border-box;
     border: solid 1px black;
-    box-shadow: 10px 10px 10px #cccccc;
+    background: hsla(210, 27%, 96%, 1);
+    background: -moz-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F1F4F7", endColorstr="#557c93", GradientType=1 );
+    
+
 }
 
 #login{
@@ -26,13 +45,11 @@ body, h1, p{
     border-radius: 10px;
     box-sizing: border-box;
     border: solid 1px black;
-    box-shadow: 10px 10px 10px #cccccc;
 }
 
 #cadastroTitulo{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: dodgerblue;
     width: auto;
     height: 120px;
     text-align: center;
@@ -40,6 +57,15 @@ body, h1, p{
     font-size: 1.6em;
     box-sizing: border-box;
     padding-top: 30px;
+    background: hsla(213, 77%, 14%, 1);
+
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#08203E", endColorstr="#557C93", GradientType=1 );
 }
 .campos{
     width: auto;
@@ -50,17 +76,22 @@ body, h1, p{
     margin-top: 10px;
 }
 .cadastroInformacoesPessoais  {
-    width: 270px;
+    width: 180px;
     height: 55px;
     float: left;
-   
-    background-color: #ededed;
     text-align: right;
     font-size: 1.1em;
     padding-top: 10px;
     padding-right: 10px;
+    margin-left: 40px;
     box-sizing: border-box;
     margin-right: 10px;
+    border: solid 1px hsla(213, 77%, 14%, 1);
+    background: hsla(210, 27%, 96%, 1);
+    background: linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F1F4F7", endColorstr="#9BB5C4", GradientType=1 );
     
 }
 .cadastroEntradaDeDados {
@@ -99,10 +130,18 @@ input[type=email]:hover{
 .enviar input{
     width: 150px;
     height: 50px;
-    background-color: dodgerblue;
     color: white;
     margin-top: 30px;
     font-size: 1.2em;
+    background: hsla(213, 77%, 14%, 1);
+
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#08203E", endColorstr="#557C93", GradientType=1 );
 }
 
 .enviar input:hover{
@@ -130,7 +169,11 @@ input[type=email]:hover{
     margin-right: auto;
     margin-top: 60px;
     margin-bottom: 10px;
-    box-shadow: 10px 10px 10px #cccccc;
+    background: hsla(210, 27%, 96%, 1);
+    background: -moz-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F1F4F7", endColorstr="#557c93", GradientType=1 );
 }
 #tblConsulta{
     width: 100%;
@@ -140,10 +183,18 @@ input[type=email]:hover{
 #tblTitulo{
     width: 100%;
     height: 30px;
-    background-color: dodgerblue;
     color: white;
     text-align: center;
     font-size: 1.6em;
+    background: hsla(213, 77%, 14%, 1);
+
+    background: linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -moz-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    background: -webkit-linear-gradient(90deg, hsla(213, 77%, 14%, 1) 0%, hsla(202, 27%, 45%, 1) 100%);
+
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#08203E", endColorstr="#557C93", GradientType=1 );
 }
 #tblLinhas{
     width: 100%;
@@ -154,8 +205,12 @@ input[type=email]:hover{
     width: 50px;
     height: 30px;
     text-align: center;
-    background-color: darkseagreen;
     border: solid 1px black;
+    background: hsla(210, 27%, 96%, 1);
+    background: linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    background: -moz-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    background: -webkit-linear-gradient(90deg, hsla(210, 27%, 96%, 1) 0%, hsla(202, 26%, 69%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F1F4F7", endColorstr="#9BB5C4", GradientType=1 );
 }
 .tblImagens{
     width: auto;
@@ -167,8 +222,8 @@ input[type=email]:hover{
 /*    box-sizing: border-box;*/
 }
 .excluir, .pesquisar, .editar{
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 /*    background-color: black;*/
     float: left;
     margin-left: 5px;

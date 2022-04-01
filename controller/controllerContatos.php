@@ -50,10 +50,20 @@
 
 }
 //fução para realizar a exclusão de um contato
- function excluirContato ()
+ function excluirContato ($id)
 {
-
+    if($id !=0 && !empty($id) && is_numeric($id)){
+        require_once('model/bd/contato.php');
+        if(deleteContato($id))
+            return true;
+        else
+        return array('idErro' => 3, 'message' => 'o banco de dados não pode excluir o registro');
+    }else{
+            return array('idErro' => 4, 'message' => 'não é possivel excluir um registro sem informar um id valido');
+    }
 }
+    
+
 //fução para  solicitar os dados da model e encaminhar a lista de contatos para a view
  function listarContato ()
 {
@@ -67,7 +77,21 @@
     else
     return false;
 }
+//função para buscar um contato atraves do id so registro
+function BuscarContato ($id){
+    
+    if($id !=0 && !empty($id) && is_numeric($id)){
 
+        require_once('model/bd/contato.php');
+        
+        $dados =                                                                                                                                                                  selectByIdContato($id);
+
+        if(!empty($dados))
+            return $dados;
+        else
+            return false;
+    }
+}
 
 
 

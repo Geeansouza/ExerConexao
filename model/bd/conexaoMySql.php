@@ -26,6 +26,12 @@ function conexaoMysql(){
     }
 }
 
+//fecha a conexão do BD no MySql
+function fecharConexaoMySql($conexao){
+
+    mysqli_close($conexao);
+}
+
 //Existem 3 formas de criar a conexão com o BD Mysql
 //    mysql_connect() - versão antiga do PHP de fazer conexão com o BD
 //       (não oferece performace e segurança)

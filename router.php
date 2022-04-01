@@ -12,12 +12,11 @@
     $action =(string)null;
     $component =(string)null;
     //validação para verificar se as requisição pe um POST de um formulário
-    if($_SERVER['REQUEST_METHOD']== 'POST'){
+    if($_SERVER['REQUEST_METHOD']== 'POST' || $_SERVER['REQUEST_METHOD'] == 'GET'){
     
         $component = strtoupper($_GET['component']);
         $action = strtoupper ($_GET['action']);
         
-
         //estrutura condicional para validar quem esta solicitando algo para o router
         switch($component){
             case'CONTATOS':
@@ -39,7 +38,40 @@
                             window.history.back();
                             </script>");
                 
+                }else if($action =='DELETAR'){
+                    //recebe o id do registro q devera ser excluido, que foi enviado pela url no link da img do excluir que foi acionado na index
+                    $idContato = $_GET['id'];
+
+                    //chama a função de excluir na controller
+                    $resposta = excluirContato($idContato);
+                    
+                    if(is_bool($resposta)){
+                        if($resposta){
+                            echo("<script>
+                            alert('Registro excluido com sucesso!');
+                            window.location.href = 'index.php'</script>");
+                        }
+                    }else if(is_array($resposta)){
+                        echo("<script>
+                        alert('".$resposta['message']."');
+                        window.history.back();
+                        </script>");
                     }
+                }else if($action == 'BUSCAR'){
+                     //recebe o id do registro q devera ser editado, que foi enviado pela url no link da img do editar que foi acionado na index
+                    $idContato = $_GET['id'];
+
+                    //chama a função de editar na controller
+                    $dados = buscarContato($idContato);
+                    
+                    session_start();
+                    //guardar em uma variavel de sessão os dados que o BD retornou para a busca da id 
+                    //obs(essa variavel de sessão sera utilizada na index.php para colocar os dados nas caixas de texto)
+                    $_SESSION['dadosContato'] = $dados;
+                    //utilizando
+                    //\\\\\\\\\\\\\\\\header('location: index.php')
+                    require_once('index.php');
+                }
         break;
                 
         }         
