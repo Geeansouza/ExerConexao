@@ -5,7 +5,7 @@
  *     Esse arquivo sera respomsasvel por emcaminhar as solicitações para a Controller
  * 
  * Autor: Gean
- * Data:04/03/2022
+ * Data:08/04/2022
  * Versão: 1.0
  * 
  *************************************************************************/
@@ -25,8 +25,15 @@
 
                 //validação para identificar tipo de ação que sera reaalizado
                 if ($action == 'INSERIR') {
+                    if(isset($_FILES) && !empty($_FILES))
+                    {
+                        //chama a função de inserir na controller
+                        $resposta = inserirContato($_POST,$_FILES);
+                    }
+                    else{
+                        $resposta = inserirContato($_POST,null);
+                    }
                     
-                    $resposta =inserirContato($_POST);
                     if (is_bool($resposta)){
                         if($resposta)
                             echo("<script>
@@ -64,14 +71,43 @@
                     //chama a função de editar na controller
                     $dados = buscarContato($idContato);
                     
+                    //ativa a utilização de variaveis de sessão no servidor
                     session_start();
-                    //guardar em uma variavel de sessão os dados que o BD retornou para a busca da id 
-                    //obs(essa variavel de sessão sera utilizada na index.php para colocar os dados nas caixas de texto)
+
+                    //Guarda em uma variavel de sessão os dados que o BD retornou para a busca do id
+                        //Obs(essa variavel de sessão sera ultilizada na index.php, para colocar os dados nas caixas de texto)
                     $_SESSION['dadosContato'] = $dados;
-                    //utilizando
-                    //\\\\\\\\\\\\\\\\header('location: index.php')
+                    
+                    //Utilizando o header tambem podemos chamar a index.php, porem havera uma ação de carregamento no navegador(piscando a tela novamento)
+                    //header('location: index.php');
+
+                    //Utilizando o require iremos apenas importar a tela da index, assim não havera um novo carregamento da pagina
                     require_once('index.php');
-                }
+                }else if($action == 'EDITAR'){
+
+                    //recebe o id que foi encaminhado no action pela URL
+
+                    $idContato=$_GET['id'];
+
+                    //chama a função editar na controller
+
+                    $resposta =atualizarContato($_POST, $idContato);
+
+                    //valida se os dados da controller retornou
+
+                    if (is_bool($resposta)){
+
+                        //verificar se o retorno foi verdadeiro
+                        if($resposta)
+                            echo("<script>
+                            alert('Registro Atualizado com sucesso');
+                            window.location.href = 'index.php'</script>");
+                    }elseif(is_array($resposta))
+                    echo("<script>
+                            alert('".$resposta['message']."');
+                            window.history.back();
+                            </script>");
+                }       
         break;
                 
         }         

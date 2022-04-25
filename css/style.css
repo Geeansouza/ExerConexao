@@ -80,11 +80,12 @@ body{
     height: 55px;
     float: left;
     text-align: right;
-    font-size: 1.1em;
+    font-size: 12px;
     padding-top: 10px;
     padding-right: 10px;
     margin-left: 40px;
     box-sizing: border-box;
+    font-weight: bolder;
     margin-right: 10px;
     border: solid 1px hsla(213, 77%, 14%, 1);
     background: hsla(210, 27%, 96%, 1);
@@ -159,6 +160,7 @@ input[type=email]:hover{
     margin-right: auto;
     margin-top: 50px;
     margin-bottom: 20px;
+    
 }
 #consultaDeDados{
     width: 1000px;
@@ -202,7 +204,7 @@ input[type=email]:hover{
     border: solid 1px black;
 }
 .tblColunas{
-    width: 50px;
+    width: auto;
     height: 30px;
     text-align: center;
     border: solid 1px black;
